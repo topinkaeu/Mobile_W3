@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
 
-class FavoriteCard extends StatefulWidget {
+class FavoriteCard extends StatelessWidget {
+  // Requirement: The widget takes a parameter for the isFavorite value
   final bool isFavorite;
   const FavoriteCard({super.key, required this.isFavorite});
-
-  @override
-  State<FavoriteCard> createState() => _FavoriteCardState();
-}
-
-class _FavoriteCardState extends State<FavoriteCard> {
-  bool _isFavorite = true;
 
   @override
   Widget build(BuildContext context) {
@@ -34,14 +28,10 @@ class _FavoriteCardState extends State<FavoriteCard> {
             ),
           ),
           IconButton(
-            onPressed: () {
-              setState(() {
-                _isFavorite = !_isFavorite;
-              });
-            },
+            onPressed: () => {},
             icon: Icon(
-              _isFavorite ? Icons.favorite : Icons.favorite_border,
-              color: _isFavorite ? Colors.red : Colors.grey,
+              isFavorite ? Icons.favorite : Icons.favorite_border,
+              color: isFavorite ? Colors.red : Colors.grey,
             ),
           ),
         ],
